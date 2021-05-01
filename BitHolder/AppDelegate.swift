@@ -10,10 +10,36 @@ import UIKit
 @main
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
+    var window: UIWindow?
+    var flowController: FlowController!
 
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
+        
+        window?.backgroundColor = .white
+        UITabBar.appearance().isOpaque = true
+        UITabBar.appearance().isTranslucent = false
+        UITabBar.appearance().barTintColor = .white
+        UITabBar.appearance().backgroundImage = UIImage()
+        UITabBar.appearance().shadowImage = UIImage.tabBarShadowImage()
+        
+        UINavigationBar.appearance().tintColor = UIColor(red: 51, green: 255, blue: 153, alpha: 1.0)
+        UINavigationBar.appearance().barTintColor = .white
+        UINavigationBar.appearance().isTranslucent = false
+        UINavigationBar.appearance().isOpaque = true
+        
+        if #available(iOS 11.0, *) {
+            
+        } else {
+            UINavigationBar.appearance().setBackgroundImage(UIImage(), for: .default)
+        }
+        UINavigationBar.appearance().titleTextAttributes =
+            [NSAttributedString.Key.foregroundColor: UIColor.black]
+        
+        flowController = FlowController()
+        self.window?.rootViewController = flowController.rootNavigationController
+        
         return true
     }
 
