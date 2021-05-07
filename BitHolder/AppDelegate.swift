@@ -23,7 +23,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         UITabBar.appearance().barTintColor = .white
         UITabBar.appearance().backgroundImage = UIImage()
         UITabBar.appearance().shadowImage = UIImage.tabBarShadowImage()
-        
         UINavigationBar.appearance().tintColor = UIColor(red: 51, green: 255, blue: 153, alpha: 1.0)
         UINavigationBar.appearance().barTintColor = .white
         UINavigationBar.appearance().isTranslucent = false
@@ -37,8 +36,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         UINavigationBar.appearance().titleTextAttributes =
             [NSAttributedString.Key.foregroundColor: UIColor.black]
         
-        flowController = FlowController()
-        self.window?.rootViewController = flowController.rootNavigationController
+//        flowController = FlowController()
+//        self.window?.rootViewController = flowController.rootNavigationController
         
         return true
     }

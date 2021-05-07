@@ -18,6 +18,11 @@
 		C7B58B14263E0F3F009E8C0E /* PricesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7B58B13263E0F3F009E8C0E /* PricesViewController.swift */; };
 		C7B58B17263E0F77009E8C0E /* PortfolioViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7B58B16263E0F77009E8C0E /* PortfolioViewController.swift */; };
 		C7B58B1A263E0F97009E8C0E /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7B58B19263E0F97009E8C0E /* SettingsViewController.swift */; };
+		C7B58B21263E195E009E8C0E /* Currency.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7B58B20263E195E009E8C0E /* Currency.swift */; };
+		C7B58B24263E1992009E8C0E /* Money.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7B58B23263E1992009E8C0E /* Money.swift */; };
+		C7B58B2726417892009E8C0E /* NetworkService.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7B58B2626417892009E8C0E /* NetworkService.swift */; };
+		C7B58B2C26417B41009E8C0E /* Stats.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7B58B2B26417B41009E8C0E /* Stats.swift */; };
+		C7B58B3026418156009E8C0E /* MainViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7B58B2F26418156009E8C0E /* MainViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -35,6 +40,11 @@
 		C7B58B13263E0F3F009E8C0E /* PricesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PricesViewController.swift; sourceTree = "<group>"; };
 		C7B58B16263E0F77009E8C0E /* PortfolioViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PortfolioViewController.swift; sourceTree = "<group>"; };
 		C7B58B19263E0F97009E8C0E /* SettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
+		C7B58B20263E195E009E8C0E /* Currency.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Currency.swift; sourceTree = "<group>"; };
+		C7B58B23263E1992009E8C0E /* Money.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Money.swift; sourceTree = "<group>"; };
+		C7B58B2626417892009E8C0E /* NetworkService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkService.swift; sourceTree = "<group>"; };
+		C7B58B2B26417B41009E8C0E /* Stats.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Stats.swift; sourceTree = "<group>"; };
+		C7B58B2F26418156009E8C0E /* MainViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewModel.swift; sourceTree = "<group>"; };
 		CABC9936FEA4EE1A81F8792A /* Pods-BitHolder.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BitHolder.release.xcconfig"; path = "Target Support Files/Pods-BitHolder/Pods-BitHolder.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -92,6 +102,7 @@
 				C7B58ADE263BC185009E8C0E /* SceneDelegate.swift */,
 				C7B58B09263DFE8C009E8C0E /* FlowController.swift */,
 				C7B58AE0263BC185009E8C0E /* MainViewController.swift */,
+				C7B58B2F26418156009E8C0E /* MainViewModel.swift */,
 				C7B58B13263E0F3F009E8C0E /* PricesViewController.swift */,
 				C7B58B16263E0F77009E8C0E /* PortfolioViewController.swift */,
 				C7B58B19263E0F97009E8C0E /* SettingsViewController.swift */,
@@ -99,8 +110,28 @@
 				C7B58AE5263BC187009E8C0E /* Assets.xcassets */,
 				C7B58AE7263BC187009E8C0E /* LaunchScreen.storyboard */,
 				C7B58AEA263BC187009E8C0E /* Info.plist */,
+				C7B58B2926417AD7009E8C0E /* Networking */,
+				C7B58B2A26417B13009E8C0E /* Models */,
 			);
 			path = BitHolder;
+			sourceTree = "<group>";
+		};
+		C7B58B2926417AD7009E8C0E /* Networking */ = {
+			isa = PBXGroup;
+			children = (
+				C7B58B2626417892009E8C0E /* NetworkService.swift */,
+			);
+			path = Networking;
+			sourceTree = "<group>";
+		};
+		C7B58B2A26417B13009E8C0E /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				C7B58B23263E1992009E8C0E /* Money.swift */,
+				C7B58B20263E195E009E8C0E /* Currency.swift */,
+				C7B58B2B26417B41009E8C0E /* Stats.swift */,
+			);
+			path = Models;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -216,11 +247,16 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C7B58B2726417892009E8C0E /* NetworkService.swift in Sources */,
+				C7B58B2C26417B41009E8C0E /* Stats.swift in Sources */,
+				C7B58B21263E195E009E8C0E /* Currency.swift in Sources */,
 				C7B58B14263E0F3F009E8C0E /* PricesViewController.swift in Sources */,
 				C7B58B0F263E07D7009E8C0E /* Extensions.swift in Sources */,
+				C7B58B3026418156009E8C0E /* MainViewModel.swift in Sources */,
 				C7B58AE1263BC185009E8C0E /* MainViewController.swift in Sources */,
 				C7B58ADD263BC185009E8C0E /* AppDelegate.swift in Sources */,
 				C7B58ADF263BC185009E8C0E /* SceneDelegate.swift in Sources */,
+				C7B58B24263E1992009E8C0E /* Money.swift in Sources */,
 				C7B58B17263E0F77009E8C0E /* PortfolioViewController.swift in Sources */,
 				C7B58B0A263DFE8C009E8C0E /* FlowController.swift in Sources */,
 				C7B58B1A263E0F97009E8C0E /* SettingsViewController.swift in Sources */,
