@@ -23,6 +23,7 @@
 		C7B58B2726417892009E8C0E /* NetworkService.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7B58B2626417892009E8C0E /* NetworkService.swift */; };
 		C7B58B2C26417B41009E8C0E /* Stats.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7B58B2B26417B41009E8C0E /* Stats.swift */; };
 		C7B58B3026418156009E8C0E /* MainViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7B58B2F26418156009E8C0E /* MainViewModel.swift */; };
+		C7B58B3B264727D3009E8C0E /* BtcStats.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7B58B3A264727D3009E8C0E /* BtcStats.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -45,6 +46,7 @@
 		C7B58B2626417892009E8C0E /* NetworkService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkService.swift; sourceTree = "<group>"; };
 		C7B58B2B26417B41009E8C0E /* Stats.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Stats.swift; sourceTree = "<group>"; };
 		C7B58B2F26418156009E8C0E /* MainViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewModel.swift; sourceTree = "<group>"; };
+		C7B58B3A264727D3009E8C0E /* BtcStats.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BtcStats.swift; sourceTree = "<group>"; };
 		CABC9936FEA4EE1A81F8792A /* Pods-BitHolder.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BitHolder.release.xcconfig"; path = "Target Support Files/Pods-BitHolder/Pods-BitHolder.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -130,6 +132,7 @@
 				C7B58B23263E1992009E8C0E /* Money.swift */,
 				C7B58B20263E195E009E8C0E /* Currency.swift */,
 				C7B58B2B26417B41009E8C0E /* Stats.swift */,
+				C7B58B3A264727D3009E8C0E /* BtcStats.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -258,6 +261,7 @@
 				C7B58ADF263BC185009E8C0E /* SceneDelegate.swift in Sources */,
 				C7B58B24263E1992009E8C0E /* Money.swift in Sources */,
 				C7B58B17263E0F77009E8C0E /* PortfolioViewController.swift in Sources */,
+				C7B58B3B264727D3009E8C0E /* BtcStats.swift in Sources */,
 				C7B58B0A263DFE8C009E8C0E /* FlowController.swift in Sources */,
 				C7B58B1A263E0F97009E8C0E /* SettingsViewController.swift in Sources */,
 			);

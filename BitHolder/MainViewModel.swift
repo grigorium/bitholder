@@ -20,13 +20,12 @@ class MainViewModel {
         }
     }
     
-    var stats: Stats?
+    var stats: BtcStatsData?
     
     func start() {
         NetworkService.shared.getStats(completion: { [weak self] stats in
             
-            print(stats.market_price_usd)
-            self?.stats = stats
+            self?.stats = stats.data
             
             self?.delegate?.update()
         })
@@ -36,7 +35,7 @@ class MainViewModel {
     }
     
     
-    func getStats() -> Stats? {
+    func getStats() -> BtcStatsData? {
         return stats
     }
     

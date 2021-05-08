@@ -15,9 +15,9 @@ class NetworkService {
     
     private init() { }
     
-    func getStats(completion: @escaping (Stats)->()) {
+    func getStats(completion: @escaping (BtcStats)->()) {
         
-        let url = URL(string: "https://api.blockchain.info/stats")!
+        let url = URL(string: "https://api.blockchair.com/bitcoin/stats")!
 
         let task = session.dataTask(with: url) { data, response, error in
 
@@ -37,7 +37,8 @@ class NetworkService {
             }
 
             do {
-                let statRespone = try! JSONDecoder().decode(Stats.self, from: data!)
+                let statRespone = try! JSONDecoder().decode(BtcStats.self, from: data!)
+                print(statRespone)
                 completion(statRespone)
                 
             } catch {
