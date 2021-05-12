@@ -18,6 +18,10 @@ class PricesViewController: UIViewController, PricesViewModelDelegate, UITableVi
     
     let tableView = UITableView()
     
+    let activityIndicator = UIActivityIndicatorView(style: .large)
+    
+    let button = UIButton(type: .custom)
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = .white
@@ -36,6 +40,23 @@ class PricesViewController: UIViewController, PricesViewModelDelegate, UITableVi
         }
         tableView.backgroundColor = .white
         tableView.allowsSelection = false
+        
+        view.addSubview(activityIndicator)
+        activityIndicator.snp.makeConstraints { (m) in
+            m.center.equalToSuperview()
+        }
+        activityIndicator.startAnimating()
+        activityIndicator.hidesWhenStopped = true
+        tableView.isHidden = true
+        
+        view.addSubview(button)
+        button.snp.makeConstraints { (m) in
+            m.size.width.equalTo(18)
+            m.right.equalTo(-20)
+            m.top.equalTo(48)
+        }
+        button.setBackgroundImage(UIImage(named: "refresh"), for: .normal)
+        button.addTarget(self, action: #selector(PricesViewController.reloadData), for: .touchUpInside)
     }
     
     func update() {
@@ -44,9 +65,15 @@ class PricesViewController: UIViewController, PricesViewModelDelegate, UITableVi
             cellModels = pricesList
             
             DispatchQueue.main.async {
+                self.tableView.isHidden = false
+                self.activityIndicator.stopAnimating()
                 self.tableView.reloadData()
             }
         }
+    }
+    
+    @objc func reloadData() {
+        self.viewModel?.start()
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {

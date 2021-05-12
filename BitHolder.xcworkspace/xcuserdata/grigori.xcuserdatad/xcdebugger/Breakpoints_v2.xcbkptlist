@@ -68,5 +68,53 @@
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "E4281F5F-2C7C-4971-B122-5861EEDD7909"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "BitHolder/PricesViewController.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "66"
+            endingLineNumber = "66"
+            landmarkName = "update()"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "E4281F5F-2C7C-4971-B122-5861EEDD7909 - c41f3ba6cfa2a316"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "BitHolder.PricesViewController.update() -&gt; ()"
+                  moduleName = "BitHolder"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/grigori/Desktop/BitHolder/BitHolder/PricesViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "52"
+                  endingLineNumber = "52"
+                  offsetFromSymbolStart = "432">
+               </Location>
+               <Location
+                  uuid = "E4281F5F-2C7C-4971-B122-5861EEDD7909 - 6b453a6adc68f47d"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 () -&gt; () in BitHolder.PricesViewController.update() -&gt; ()"
+                  moduleName = "BitHolder"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/grigori/Desktop/BitHolder/BitHolder/PricesViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "53"
+                  endingLineNumber = "53"
+                  offsetFromSymbolStart = "20">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
    </Breakpoints>
 </Bucket>
