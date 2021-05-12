@@ -24,6 +24,10 @@
 		C7B58B2C26417B41009E8C0E /* Stats.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7B58B2B26417B41009E8C0E /* Stats.swift */; };
 		C7B58B3026418156009E8C0E /* MainViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7B58B2F26418156009E8C0E /* MainViewModel.swift */; };
 		C7B58B3B264727D3009E8C0E /* BtcStats.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7B58B3A264727D3009E8C0E /* BtcStats.swift */; };
+		C7B58B3E26474564009E8C0E /* CoinData.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7B58B3D26474564009E8C0E /* CoinData.swift */; };
+		C7B58B41264747F0009E8C0E /* PricesViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7B58B40264747F0009E8C0E /* PricesViewModel.swift */; };
+		C7B58B4426475162009E8C0E /* CoinCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7B58B4326475162009E8C0E /* CoinCell.swift */; };
+		C7B58B4A26475A29009E8C0E /* CoinView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7B58B4926475A29009E8C0E /* CoinView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -47,6 +51,10 @@
 		C7B58B2B26417B41009E8C0E /* Stats.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Stats.swift; sourceTree = "<group>"; };
 		C7B58B2F26418156009E8C0E /* MainViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewModel.swift; sourceTree = "<group>"; };
 		C7B58B3A264727D3009E8C0E /* BtcStats.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BtcStats.swift; sourceTree = "<group>"; };
+		C7B58B3D26474564009E8C0E /* CoinData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoinData.swift; sourceTree = "<group>"; };
+		C7B58B40264747F0009E8C0E /* PricesViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PricesViewModel.swift; sourceTree = "<group>"; };
+		C7B58B4326475162009E8C0E /* CoinCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoinCell.swift; sourceTree = "<group>"; };
+		C7B58B4926475A29009E8C0E /* CoinView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoinView.swift; sourceTree = "<group>"; };
 		CABC9936FEA4EE1A81F8792A /* Pods-BitHolder.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BitHolder.release.xcconfig"; path = "Target Support Files/Pods-BitHolder/Pods-BitHolder.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -106,6 +114,7 @@
 				C7B58AE0263BC185009E8C0E /* MainViewController.swift */,
 				C7B58B2F26418156009E8C0E /* MainViewModel.swift */,
 				C7B58B13263E0F3F009E8C0E /* PricesViewController.swift */,
+				C7B58B40264747F0009E8C0E /* PricesViewModel.swift */,
 				C7B58B16263E0F77009E8C0E /* PortfolioViewController.swift */,
 				C7B58B19263E0F97009E8C0E /* SettingsViewController.swift */,
 				C7B58B0E263E07D7009E8C0E /* Extensions.swift */,
@@ -114,6 +123,7 @@
 				C7B58AEA263BC187009E8C0E /* Info.plist */,
 				C7B58B2926417AD7009E8C0E /* Networking */,
 				C7B58B2A26417B13009E8C0E /* Models */,
+				C7B58B4826475A09009E8C0E /* Cells */,
 			);
 			path = BitHolder;
 			sourceTree = "<group>";
@@ -133,8 +143,18 @@
 				C7B58B20263E195E009E8C0E /* Currency.swift */,
 				C7B58B2B26417B41009E8C0E /* Stats.swift */,
 				C7B58B3A264727D3009E8C0E /* BtcStats.swift */,
+				C7B58B3D26474564009E8C0E /* CoinData.swift */,
 			);
 			path = Models;
+			sourceTree = "<group>";
+		};
+		C7B58B4826475A09009E8C0E /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				C7B58B4326475162009E8C0E /* CoinCell.swift */,
+				C7B58B4926475A29009E8C0E /* CoinView.swift */,
+			);
+			path = Cells;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -252,6 +272,8 @@
 			files = (
 				C7B58B2726417892009E8C0E /* NetworkService.swift in Sources */,
 				C7B58B2C26417B41009E8C0E /* Stats.swift in Sources */,
+				C7B58B41264747F0009E8C0E /* PricesViewModel.swift in Sources */,
+				C7B58B4A26475A29009E8C0E /* CoinView.swift in Sources */,
 				C7B58B21263E195E009E8C0E /* Currency.swift in Sources */,
 				C7B58B14263E0F3F009E8C0E /* PricesViewController.swift in Sources */,
 				C7B58B0F263E07D7009E8C0E /* Extensions.swift in Sources */,
@@ -259,9 +281,11 @@
 				C7B58AE1263BC185009E8C0E /* MainViewController.swift in Sources */,
 				C7B58ADD263BC185009E8C0E /* AppDelegate.swift in Sources */,
 				C7B58ADF263BC185009E8C0E /* SceneDelegate.swift in Sources */,
+				C7B58B4426475162009E8C0E /* CoinCell.swift in Sources */,
 				C7B58B24263E1992009E8C0E /* Money.swift in Sources */,
 				C7B58B17263E0F77009E8C0E /* PortfolioViewController.swift in Sources */,
 				C7B58B3B264727D3009E8C0E /* BtcStats.swift in Sources */,
+				C7B58B3E26474564009E8C0E /* CoinData.swift in Sources */,
 				C7B58B0A263DFE8C009E8C0E /* FlowController.swift in Sources */,
 				C7B58B1A263E0F97009E8C0E /* SettingsViewController.swift in Sources */,
 			);

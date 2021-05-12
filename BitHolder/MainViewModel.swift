@@ -30,7 +30,7 @@ class MainViewModel {
             self?.delegate?.update()
         })
         
-        //get all wallets and sum them
+        //get all wallets and sum+ them
         self.delegate?.getBalance()
     }
     

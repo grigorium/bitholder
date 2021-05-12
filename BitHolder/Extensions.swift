@@ -295,9 +295,9 @@ extension NSAttributedString {
         case .purchasedStocks:
             return createDictionary(font: UIFont.systemFont(ofSize: 20, weight: .bold), color: .black, lineHeight: 24, alignment: .center)
         case .purchasedStocksSubtitle:
-            return createDictionary(font: UIFont.systemFont(ofSize: 14), color: .black, lineHeight: 20, alignment: .center, kern: -0.2)
+            return createDictionary(font: UIFont.systemFont(ofSize: 10), color: .darkGray, lineHeight: 12, alignment: .center, kern: -0.2)
         case .companyDescription:
-            return createDictionary(font: UIFont.systemFont(ofSize: 12), color: UIColor.black, lineHeight: 18)
+            return createDictionary(font: UIFont.systemFont(ofSize: 14, weight: .bold), color: UIColor.black, lineHeight: 14)
         case .emptyTabCell:
             return createDictionary(font: UIFont.systemFont(ofSize: 14), color: UIColor.grayTextColor(),  lineHeight: 18, alignment: .center, kern: -0.2)
         case .tradingAssetSummaryTitleDescription:
@@ -315,7 +315,7 @@ extension NSAttributedString {
         case .tradingAssetSummaryStocksMinusiPhonePlus:
             return createDictionary(font: UIFont.systemFont(ofSize: 16, weight: .semibold), color: UIColor(r: 208, g: 2, b: 27), lineHeight: 20)
         case .orderWaiting:
-            return createDictionary(font: UIFont.systemFont(ofSize: 14, weight: .regular), color: .black, lineHeight: 18, alignment: .center)
+            return createDictionary(font: UIFont.systemFont(ofSize: 10, weight: .regular), color: .black, lineHeight: 13, alignment: .center)
         case .accountOperationsBalance:
             return createDictionary(font: UIFont.systemFont(ofSize: 26, weight: .bold), color: .black, lineHeight: 31, alignment: .center, kern: -0.4)
         case .refillOptions:

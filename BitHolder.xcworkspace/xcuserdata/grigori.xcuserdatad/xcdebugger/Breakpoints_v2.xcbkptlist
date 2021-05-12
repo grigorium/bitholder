@@ -55,16 +55,16 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "34888D9E-4F0B-4C72-894D-D77DFE01BCAF"
-            shouldBeEnabled = "No"
+            uuid = "EE275F7A-DDBC-41F4-B987-12772B1C6DFA"
+            shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "BitHolder/Networking/NetworkService.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "42"
-            endingLineNumber = "42"
-            landmarkName = "getStats(completion:)"
+            startingLineNumber = "66"
+            endingLineNumber = "66"
+            landmarkName = "getPricesList(completion:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>

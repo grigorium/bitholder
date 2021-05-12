@@ -18,6 +18,8 @@ class MainViewController: UIViewController, MainViewModelDelegate {
         return i
     }()
     
+    let scrollView = UIScrollView()
+    
     let balanceLabel: UILabel = {
         let label = UILabel()
         var str = NSMutableAttributedString(text: "СТОИМОСТЬ ПОРТФЕЛЯ", style: .briefCasePrice)
@@ -47,21 +49,43 @@ class MainViewController: UIViewController, MainViewModelDelegate {
         }
         mountainsImageView.setupMotionEffect()
         
-        view.addSubview(balanceLabel)
+        view.addSubview(scrollView)
+        scrollView.snp.makeConstraints { (m) in
+            m.edges.equalToSuperview()
+        }
+        
+        scrollView.addSubview(balanceLabel)
         balanceLabel.snp.makeConstraints { (m) in
-            m.top.equalTo(110)
+            m.top.equalTo(100)
             m.centerX.equalToSuperview()
         }
         
-        view.addSubview(balanceAmountLabel)
+        scrollView.addSubview(balanceAmountLabel)
         balanceAmountLabel.snp.makeConstraints { (m) in
             m.top.equalTo(balanceLabel.snp.bottom).offset(20)
             m.centerX.equalToSuperview()
         }
+        scrollView.showsVerticalScrollIndicator = false
         
         viewModel = MainViewModel()
         viewModel?.delegate = self
     }
+    
+//    override func viewWillAppear(_ animated: Bool) {
+//        super.viewWillAppear(animated)
+//        viewModel?.start()
+//    }
+//
+//    override func viewDidDisappear(_ animated: Bool) {
+//        super.viewDidDisappear(animated)
+//
+//        for view in marketView.subviews {
+//            view.removeFromSuperview()
+//        }
+//        for view in transactionsAndMiningView.subviews {
+//            view.removeFromSuperview()
+//        }
+//    }
     
     override var preferredStatusBarStyle: UIStatusBarStyle {
         return .lightContent
@@ -103,14 +127,14 @@ class MainViewController: UIViewController, MainViewModelDelegate {
     private func setupInfoViews(stats: BtcStatsData) {
         DispatchQueue.main.async {
             
-            self.view.addSubview(self.marketLabel)
+            self.scrollView.addSubview(self.marketLabel)
             self.marketLabel.snp.makeConstraints { (m) in
                 m.top.equalTo(self.balanceAmountLabel.snp.bottom).offset(140)
                 m.left.equalTo(15)
             }
             self.marketLabel.attributedText = NSAttributedString(text: "ОБЗОР РЫНКА BTC", style: AttributedStringStyle.investIdea)
             
-            self.view.addSubview(self.marketView)
+            self.scrollView.addSubview(self.marketView)
             self.marketView.backgroundColor = UIColor(white: 1, alpha: 0.25)
             self.marketView.layer.cornerRadius = 15
             self.marketView.snp.makeConstraints { (m) in
@@ -120,7 +144,7 @@ class MainViewController: UIViewController, MainViewModelDelegate {
                 m.height.equalTo(130)
             }
             
-            self.view.addSubview(self.transactionsAndMiningLabel)
+            self.scrollView.addSubview(self.transactionsAndMiningLabel)
             self.transactionsAndMiningLabel.snp.makeConstraints { (m) in
                 m.top.equalTo(self.marketView.snp.bottom).offset(20)
                 m.left.equalTo(15)
@@ -128,7 +152,7 @@ class MainViewController: UIViewController, MainViewModelDelegate {
             self.transactionsAndMiningLabel.attributedText = NSAttributedString(text: "ТРАНЗАКЦИИ И МАЙНИНГ BTC", style: AttributedStringStyle.investIdea)
 
             
-            self.view.addSubview(self.transactionsAndMiningView)
+            self.scrollView.addSubview(self.transactionsAndMiningView)
             self.transactionsAndMiningView.backgroundColor = .white
             self.transactionsAndMiningView.backgroundColor = UIColor(white: 1, alpha: 0.25)
             
@@ -138,6 +162,7 @@ class MainViewController: UIViewController, MainViewModelDelegate {
                 m.left.equalTo(10)
                 m.top.equalTo(self.transactionsAndMiningLabel.snp.bottom).offset(5)
                 m.height.equalTo(230)
+                m.bottom.equalToSuperview().offset(-10)
             }
             
             self.addMarketLabels(stats: stats)

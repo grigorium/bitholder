@@ -8,5 +8,6 @@ target 'BitHolder' do
   # Pods for BitHolder
 
 	pod 'SnapKit', '~> 5.0.0'
+	pod 'Kingfisher', '~> 6.0'
 
 end

@@ -41,7 +41,7 @@ class FlowController {
         thirdTabNavigationController.viewControllers = [vc3]
         
         let vc4 = SettingsViewController()
-        fourTabNavigationController.viewControllers = []
+        fourTabNavigationController.viewControllers = [vc4]
         
         tabBarController.viewControllers = [firstTabNavigationController, secondTabNavigationController, thirdTabNavigationController, fourTabNavigationController]
         
