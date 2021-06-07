@@ -40,7 +40,7 @@ struct CoinData: Codable {
     let symbol: String?
     let name: String?
     let image: String?
-    let current_price: Decimal?
+    var current_price: Decimal?
     let market_cap: Decimal?
     let market_cap_rank: Int?
     let fully_diluted_valuation: Decimal?

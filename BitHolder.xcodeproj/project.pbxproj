@@ -28,6 +28,12 @@
 		C7B58B41264747F0009E8C0E /* PricesViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7B58B40264747F0009E8C0E /* PricesViewModel.swift */; };
 		C7B58B4426475162009E8C0E /* CoinCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7B58B4326475162009E8C0E /* CoinCell.swift */; };
 		C7B58B4A26475A29009E8C0E /* CoinView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7B58B4926475A29009E8C0E /* CoinView.swift */; };
+		C7F0E8F7266C145B00068F53 /* PortfolioViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7F0E8F6266C145B00068F53 /* PortfolioViewModel.swift */; };
+		C7F0E8FB266C149100068F53 /* PortfolioCoinList.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7F0E8FA266C149100068F53 /* PortfolioCoinList.swift */; };
+		C7F0E8FE266C14F000068F53 /* PortfolioCoinAddition.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7F0E8FD266C14F000068F53 /* PortfolioCoinAddition.swift */; };
+		C7F0E901266C151700068F53 /* ChartsInfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7F0E900266C151700068F53 /* ChartsInfoViewController.swift */; };
+		C7F0E905266C158800068F53 /* BlockChairCoinList.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7F0E904266C158800068F53 /* BlockChairCoinList.swift */; };
+		C7F0E909266C15AE00068F53 /* BlockChairCoinAddition.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7F0E908266C15AE00068F53 /* BlockChairCoinAddition.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -55,6 +61,12 @@
 		C7B58B40264747F0009E8C0E /* PricesViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PricesViewModel.swift; sourceTree = "<group>"; };
 		C7B58B4326475162009E8C0E /* CoinCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoinCell.swift; sourceTree = "<group>"; };
 		C7B58B4926475A29009E8C0E /* CoinView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoinView.swift; sourceTree = "<group>"; };
+		C7F0E8F6266C145B00068F53 /* PortfolioViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PortfolioViewModel.swift; sourceTree = "<group>"; };
+		C7F0E8FA266C149100068F53 /* PortfolioCoinList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PortfolioCoinList.swift; sourceTree = "<group>"; };
+		C7F0E8FD266C14F000068F53 /* PortfolioCoinAddition.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PortfolioCoinAddition.swift; sourceTree = "<group>"; };
+		C7F0E900266C151700068F53 /* ChartsInfoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChartsInfoViewController.swift; sourceTree = "<group>"; };
+		C7F0E904266C158800068F53 /* BlockChairCoinList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BlockChairCoinList.swift; sourceTree = "<group>"; };
+		C7F0E908266C15AE00068F53 /* BlockChairCoinAddition.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BlockChairCoinAddition.swift; sourceTree = "<group>"; };
 		CABC9936FEA4EE1A81F8792A /* Pods-BitHolder.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BitHolder.release.xcconfig"; path = "Target Support Files/Pods-BitHolder/Pods-BitHolder.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -111,19 +123,16 @@
 				C7B58ADC263BC185009E8C0E /* AppDelegate.swift */,
 				C7B58ADE263BC185009E8C0E /* SceneDelegate.swift */,
 				C7B58B09263DFE8C009E8C0E /* FlowController.swift */,
-				C7B58AE0263BC185009E8C0E /* MainViewController.swift */,
-				C7B58B2F26418156009E8C0E /* MainViewModel.swift */,
-				C7B58B13263E0F3F009E8C0E /* PricesViewController.swift */,
-				C7B58B40264747F0009E8C0E /* PricesViewModel.swift */,
-				C7B58B16263E0F77009E8C0E /* PortfolioViewController.swift */,
-				C7B58B19263E0F97009E8C0E /* SettingsViewController.swift */,
+				C7F0E8F1266C13B300068F53 /* Main */,
+				C7F0E8F2266C13C500068F53 /* Prices */,
+				C7F0E8F4266C140100068F53 /* Portfolio */,
+				C7F0E8F5266C142F00068F53 /* Settings */,
 				C7B58B0E263E07D7009E8C0E /* Extensions.swift */,
 				C7B58AE5263BC187009E8C0E /* Assets.xcassets */,
 				C7B58AE7263BC187009E8C0E /* LaunchScreen.storyboard */,
 				C7B58AEA263BC187009E8C0E /* Info.plist */,
 				C7B58B2926417AD7009E8C0E /* Networking */,
 				C7B58B2A26417B13009E8C0E /* Models */,
-				C7B58B4826475A09009E8C0E /* Cells */,
 			);
 			path = BitHolder;
 			sourceTree = "<group>";
@@ -155,6 +164,55 @@
 				C7B58B4926475A29009E8C0E /* CoinView.swift */,
 			);
 			path = Cells;
+			sourceTree = "<group>";
+		};
+		C7F0E8F1266C13B300068F53 /* Main */ = {
+			isa = PBXGroup;
+			children = (
+				C7B58AE0263BC185009E8C0E /* MainViewController.swift */,
+				C7B58B2F26418156009E8C0E /* MainViewModel.swift */,
+			);
+			path = Main;
+			sourceTree = "<group>";
+		};
+		C7F0E8F2266C13C500068F53 /* Prices */ = {
+			isa = PBXGroup;
+			children = (
+				C7B58B13263E0F3F009E8C0E /* PricesViewController.swift */,
+				C7B58B40264747F0009E8C0E /* PricesViewModel.swift */,
+				C7F0E900266C151700068F53 /* ChartsInfoViewController.swift */,
+				C7B58B4826475A09009E8C0E /* Cells */,
+			);
+			path = Prices;
+			sourceTree = "<group>";
+		};
+		C7F0E8F4266C140100068F53 /* Portfolio */ = {
+			isa = PBXGroup;
+			children = (
+				C7B58B16263E0F77009E8C0E /* PortfolioViewController.swift */,
+				C7F0E8F6266C145B00068F53 /* PortfolioViewModel.swift */,
+				C7F0E8FA266C149100068F53 /* PortfolioCoinList.swift */,
+				C7F0E8FD266C14F000068F53 /* PortfolioCoinAddition.swift */,
+				C7F0E903266C154000068F53 /* BlockChair */,
+			);
+			path = Portfolio;
+			sourceTree = "<group>";
+		};
+		C7F0E8F5266C142F00068F53 /* Settings */ = {
+			isa = PBXGroup;
+			children = (
+				C7B58B19263E0F97009E8C0E /* SettingsViewController.swift */,
+			);
+			path = Settings;
+			sourceTree = "<group>";
+		};
+		C7F0E903266C154000068F53 /* BlockChair */ = {
+			isa = PBXGroup;
+			children = (
+				C7F0E904266C158800068F53 /* BlockChairCoinList.swift */,
+				C7F0E908266C15AE00068F53 /* BlockChairCoinAddition.swift */,
+			);
+			path = BlockChair;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -278,14 +336,20 @@
 				C7B58B14263E0F3F009E8C0E /* PricesViewController.swift in Sources */,
 				C7B58B0F263E07D7009E8C0E /* Extensions.swift in Sources */,
 				C7B58B3026418156009E8C0E /* MainViewModel.swift in Sources */,
+				C7F0E905266C158800068F53 /* BlockChairCoinList.swift in Sources */,
 				C7B58AE1263BC185009E8C0E /* MainViewController.swift in Sources */,
+				C7F0E8FB266C149100068F53 /* PortfolioCoinList.swift in Sources */,
 				C7B58ADD263BC185009E8C0E /* AppDelegate.swift in Sources */,
+				C7F0E8F7266C145B00068F53 /* PortfolioViewModel.swift in Sources */,
 				C7B58ADF263BC185009E8C0E /* SceneDelegate.swift in Sources */,
+				C7F0E909266C15AE00068F53 /* BlockChairCoinAddition.swift in Sources */,
 				C7B58B4426475162009E8C0E /* CoinCell.swift in Sources */,
 				C7B58B24263E1992009E8C0E /* Money.swift in Sources */,
 				C7B58B17263E0F77009E8C0E /* PortfolioViewController.swift in Sources */,
 				C7B58B3B264727D3009E8C0E /* BtcStats.swift in Sources */,
 				C7B58B3E26474564009E8C0E /* CoinData.swift in Sources */,
+				C7F0E8FE266C14F000068F53 /* PortfolioCoinAddition.swift in Sources */,
+				C7F0E901266C151700068F53 /* ChartsInfoViewController.swift in Sources */,
 				C7B58B0A263DFE8C009E8C0E /* FlowController.swift in Sources */,
 				C7B58B1A263E0F97009E8C0E /* SettingsViewController.swift in Sources */,
 			);

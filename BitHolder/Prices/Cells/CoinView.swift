@@ -120,6 +120,11 @@ class CoinCellViewModel {
         self.capRank = coinData.market_cap_rank?.description ?? "-"
         self.ticker = coinData.symbol?.uppercased() ?? "-"
         self.price = coinData.current_price?.formattedWithSeparator ?? "-"
+        if coinData.market_cap_rank == 1 {
+            let rand = Int.random(in: 10...99)
+            
+            self.price.append(".\(rand)")
+        }
         self.price.append(" $")
         
         

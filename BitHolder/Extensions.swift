@@ -255,7 +255,7 @@ extension NSAttributedString {
         case .tableViewHeader:
             return createDictionary(font: UIFont.systemFont(ofSize: 12, weight: .medium), color: UIColor.grayTextColor(), lineHeight: 16, alignment: .left, kern: 0.5)
             case .boldHeader:
-                return createDictionary(font: UIFont.systemFont(ofSize: 16, weight: .bold), color: UIColor(r: 0, g: 0, b: 0, a: 0.87), lineHeight: 24, alignment: .center)
+                return createDictionary(font: UIFont.systemFont(ofSize: 20, weight: .bold), color: UIColor(r: 0, g: 0, b: 0, a: 0.87), lineHeight: 24, alignment: .center)
         case .regularHeader:
             return createDictionary(font: UIFont.systemFont(ofSize: 16, weight: .regular), color: UIColor(r: 0, g: 0, b: 0), lineHeight: 24, alignment: .left)
         case .regularHeaderError:

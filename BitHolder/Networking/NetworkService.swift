@@ -36,8 +36,8 @@ class NetworkService {
                 print(statRespone)
                 completion(statRespone)
                 
-            } catch {
-                print("JSON error: \(error.localizedDescription)")
+//            } catch {
+//                print("JSON error: \(error.localizedDescription)")
             }
         }
 
@@ -65,8 +65,8 @@ class NetworkService {
                 print(statRespone)
                 completion(statRespone)
                 
-            } catch {
-                print("JSON error: \(error.localizedDescription)")
+//            } catch {
+//                print("JSON error: \(error.localizedDescription)")
             }
         }
 
