@@ -39,7 +39,6 @@ class PricesViewController: UIViewController, PricesViewModelDelegate, UITableVi
             m.left.right.bottom.equalToSuperview()
         }
         tableView.backgroundColor = .white
-        tableView.allowsSelection = false
         
         view.addSubview(activityIndicator)
         activityIndicator.snp.makeConstraints { (m) in
@@ -86,7 +85,21 @@ class PricesViewController: UIViewController, PricesViewModelDelegate, UITableVi
             return cell
         }
         cell.viewModel = CoinCellViewModel(cm)
+        
         return cell
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        guard let cm = cellModels?[indexPath.row] else {
+            return
+        }
+        
+        //coinViewcontroller
+        let vm = ChartsInfoViewModel(coinId: cm.id ?? "bitcoin")
+        let vc = ChartsInfoViewController()
+        vc.viewModel = vm
+        
+        self.navigationController?.pushViewController(vc, animated: true)
     }
     
 }

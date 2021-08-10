@@ -129,7 +129,7 @@ class MainViewController: UIViewController, MainViewModelDelegate {
             
             self.scrollView.addSubview(self.marketLabel)
             self.marketLabel.snp.makeConstraints { (m) in
-                m.top.equalTo(self.balanceAmountLabel.snp.bottom).offset(140)
+                m.top.equalTo(self.balanceAmountLabel.snp.bottom).offset(110)
                 m.left.equalTo(15)
             }
             self.marketLabel.attributedText = NSAttributedString(text: "ОБЗОР РЫНКА BTC", style: AttributedStringStyle.investIdea)

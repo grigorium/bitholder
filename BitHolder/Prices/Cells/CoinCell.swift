@@ -22,6 +22,7 @@ class CoinCell: UITableViewCell {
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
         contentView.addSubview(coinView)
+        selectionStyle = .none
         coinView.snp.makeConstraints { (m) in
             m.edges.equalToSuperview()
         }
