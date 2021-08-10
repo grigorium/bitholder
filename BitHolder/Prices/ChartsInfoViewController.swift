@@ -6,14 +6,25 @@
 //
 
 import UIKit
+import SnapKit
+import Charts
 
-class ChartsInfoViewController: UIViewController {
+class ChartsInfoViewController: UIViewController, ChartViewDelegate {
     
     var viewModel: ChartsInfoViewModel!
     
     let backButton = UIButton(type: .custom)
     
-    //let chartView = LineChartView()
+    let chartView = LineChartView()
+    
+    var markerView: ChartMarkerView!
+    
+    var leftChartConstraint: Constraint!
+    
+    let lowPriceLabel = UILabel()
+    let highPriceLabel = UILabel()
+    let lowDateLabel = UILabel()
+    let highDateLabel = UILabel()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -22,45 +33,117 @@ class ChartsInfoViewController: UIViewController {
         
         setupBackButton()
 
-        //setupChart()
-        
-        //chartView.data = ChartData(dataSet: )
+        setupChart()
     }
     
-//    func setupChart() {
-//
-//        viewModel.fetchData { [weak self] (chartDataValue) in
-//            guard let self = self else { return }
-//
-//            var lineChartEntry = [ChartDataEntry]()
-//            let val = chartDataValue.prices
-//
-//            for i in 0..<val.count {
-//                let value = ChartDataEntry(x: val[i][0], y: val[i][1])
-//                lineChartEntry.append(value)
-//            }
-//
-//            let line1 = LineChartDataSet(entries: lineChartEntry, label: self.viewModel.coinId)
-//            line1.colors = [NSUIColor.blue]
-//            line1.drawCirclesEnabled = false
-//            let chartData = LineChartData()
-//            chartData.addDataSet(line1)
-//            chartView.chartDescription
-//
-//            self.chartView.data = chartData
-//
-//            DispatchQueue.main.async {
-//                self.view.addSubview(self.chartView)
-//                self.chartView.backgroundColor = UIColor.green.withAlphaComponent(0.1)
-//                self.chartView.snp.makeConstraints { (m) in
-//                    m.top.equalTo(150)
-//                    m.centerX.equalToSuperview()
-//                    m.height.width.equalTo(self.view.snp.width).multipliedBy(0.92)
-//                }
-//            }
-//        }
-//    }
+    func setupChart() {
+        
+        viewModel.fetchData { [weak self] (chartDataValue) in
+            guard let self = self else { return }
+            
+            var lineChartEntry = [ChartDataEntry]()
+            let val = chartDataValue.prices
+            
+            for i in 0..<val.count {
+                let value = ChartDataEntry(x: val[i][0], y: val[i][1])
+                lineChartEntry.append(value)
+            }
+            
+            let set = LineChartDataSet(entries: lineChartEntry, label: nil)
+            set.colors = [NSUIColor.systemGreen]
+            set.drawCirclesEnabled = false
+            set.mode = .cubicBezier
+            set.lineWidth = 3
+            set.fill = Fill(color: .systemGreen)
+            set.fillAlpha = 0.6
+            set.drawFilledEnabled = true
+            set.drawValuesEnabled = false
+            
+            
+            let chartData = LineChartData()
+            chartData.addDataSet(set)
+            self.chartView.data = chartData
+            
+            self.chartView.setScaleEnabled(false)
+            self.chartView.minOffset = 0
+            self.chartView.legend.form = .none
+            self.chartView.rightAxis.enabled = false
+            self.chartView.leftAxis.enabled = false
+            self.chartView.drawGridBackgroundEnabled = false
+            self.chartView.xAxis.enabled = false
+            self.chartView.delegate = self
+            
+            DispatchQueue.main.async {
+                self.view.addSubview(self.chartView)
+                self.chartView.backgroundColor = UIColor.white
+                self.chartView.snp.makeConstraints { (m) in
+                    m.top.equalTo(110)
+                    m.centerX.equalToSuperview()
+                    m.height.width.equalTo(self.view.snp.width).multipliedBy(0.95)
+                }
+                
+                self.markerView = ChartMarkerView(chartStyle: .briefcase)
+                self.view.addSubview(self.markerView)
+                self.view.bringSubviewToFront(self.markerView)
+                self.markerView.snp.makeConstraints { (m) in
+                    self.leftChartConstraint = m.left.equalTo(self.chartView.snp.left).constraint
+                    m.right.lessThanOrEqualToSuperview()
+                    m.top.equalTo(self.chartView.snp.top)
+                }
+                self.markerView.layer.opacity = 0
+            }
+        }
+    }
     
+    func chartValueSelected(_ chartView: ChartViewBase, entry: ChartDataEntry, highlight: Highlight) {
+
+        let index = entry.x/1000
+        let date = Date(timeIntervalSince1970: index)
+        let dateFormatter = DateFormatter()
+        dateFormatter.locale = Locale(identifier: "ru_RU")
+        dateFormatter.dateFormat = "dd MMMM"
+        let stringDate = dateFormatter.string(from: date)
+
+        markerView.dateLabel.text = stringDate
+        
+        let summ = entry.y.description
+        
+        let delimiter = "."
+        let token = summ.components(separatedBy: delimiter)
+        let first = token[0]
+        let last = token[1]
+        
+        var prc = first
+        prc.append(".")
+        prc.append(contentsOf: last.prefix(2))
+        prc.append(" $")
+        
+        markerView.valueLabel.text = "\(prc)"
+        
+        let xPosition = highlight.xPx
+        let yPosition = highlight.yPx
+        let screenWidth = UIScreen.main.bounds.width
+        
+        var markerLeftOffset: CGFloat!
+        var lineLeftOffset: CGFloat!
+        if xPosition <= markerView.width/2 {
+            markerLeftOffset = 0
+            lineLeftOffset = xPosition
+        } else if screenWidth - xPosition <= markerView.width/2 {
+            markerLeftOffset = screenWidth - markerView.width
+            lineLeftOffset = markerView.width/2 + abs(screenWidth - markerView.width/2 - xPosition)
+        } else {
+            markerLeftOffset = xPosition - markerView.width/2
+            lineLeftOffset = markerView.width/2
+        }
+        markerView.updateHeightAndLeftConstraints(height: yPosition - markerView.height, left: lineLeftOffset)
+        markerView.snp.updateConstraints { (m) in
+            leftChartConstraint.update(offset: markerLeftOffset)
+        }
+        markerView.layer.opacity = 1
+        markerView.layoutIfNeeded()
+    }
+
     func setupBackButton() {
         view.addSubview(backButton)
         backButton.snp.makeConstraints { (m) in
@@ -75,12 +158,6 @@ class ChartsInfoViewController: UIViewController {
     @objc func dismissVc() {
         self.navigationController?.popViewController(animated: true)
     }
-    
-    
-    
-    
-    
-    
 }
 
 class ChartsInfoViewModel {

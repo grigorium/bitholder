@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 51;
+	objectVersion = 52;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -29,6 +29,8 @@
 		C7B58B4426475162009E8C0E /* CoinCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7B58B4326475162009E8C0E /* CoinCell.swift */; };
 		C7B58B4A26475A29009E8C0E /* CoinView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7B58B4926475A29009E8C0E /* CoinView.swift */; };
 		C7F00A9B26C2ABB300FD8EEF /* ChartData.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7F00A9A26C2ABB300FD8EEF /* ChartData.swift */; };
+		C7F00AAE26C2CAAC00FD8EEF /* SwiftUICharts in Frameworks */ = {isa = PBXBuildFile; productRef = C7F00AAD26C2CAAC00FD8EEF /* SwiftUICharts */; };
+		C7F00AC626C2ED5100FD8EEF /* ChartViews.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7F00AC526C2ED5100FD8EEF /* ChartViews.swift */; };
 		C7F0E8F7266C145B00068F53 /* PortfolioViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7F0E8F6266C145B00068F53 /* PortfolioViewModel.swift */; };
 		C7F0E8FB266C149100068F53 /* PortfolioCoinList.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7F0E8FA266C149100068F53 /* PortfolioCoinList.swift */; };
 		C7F0E8FE266C14F000068F53 /* PortfolioCoinAddition.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7F0E8FD266C14F000068F53 /* PortfolioCoinAddition.swift */; };
@@ -63,6 +65,7 @@
 		C7B58B4326475162009E8C0E /* CoinCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoinCell.swift; sourceTree = "<group>"; };
 		C7B58B4926475A29009E8C0E /* CoinView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoinView.swift; sourceTree = "<group>"; };
 		C7F00A9A26C2ABB300FD8EEF /* ChartData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChartData.swift; sourceTree = "<group>"; };
+		C7F00AC526C2ED5100FD8EEF /* ChartViews.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChartViews.swift; sourceTree = "<group>"; };
 		C7F0E8F6266C145B00068F53 /* PortfolioViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PortfolioViewModel.swift; sourceTree = "<group>"; };
 		C7F0E8FA266C149100068F53 /* PortfolioCoinList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PortfolioCoinList.swift; sourceTree = "<group>"; };
 		C7F0E8FD266C14F000068F53 /* PortfolioCoinAddition.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PortfolioCoinAddition.swift; sourceTree = "<group>"; };
@@ -78,6 +81,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				B1CBA657C8495AB24BC05D89 /* Pods_BitHolder.framework in Frameworks */,
+				C7F00AAE26C2CAAC00FD8EEF /* SwiftUICharts in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -169,6 +173,14 @@
 			path = Cells;
 			sourceTree = "<group>";
 		};
+		C7F00AC426C2ED3B00FD8EEF /* Chart */ = {
+			isa = PBXGroup;
+			children = (
+				C7F00AC526C2ED5100FD8EEF /* ChartViews.swift */,
+			);
+			path = Chart;
+			sourceTree = "<group>";
+		};
 		C7F0E8F1266C13B300068F53 /* Main */ = {
 			isa = PBXGroup;
 			children = (
@@ -184,6 +196,7 @@
 				C7B58B13263E0F3F009E8C0E /* PricesViewController.swift */,
 				C7B58B40264747F0009E8C0E /* PricesViewModel.swift */,
 				C7F0E900266C151700068F53 /* ChartsInfoViewController.swift */,
+				C7F00AC426C2ED3B00FD8EEF /* Chart */,
 				C7B58B4826475A09009E8C0E /* Cells */,
 			);
 			path = Prices;
@@ -236,6 +249,9 @@
 			dependencies = (
 			);
 			name = BitHolder;
+			packageProductDependencies = (
+				C7F00AAD26C2CAAC00FD8EEF /* SwiftUICharts */,
+			);
 			productName = BitHolder;
 			productReference = C7B58AD9263BC185009E8C0E /* BitHolder.app */;
 			productType = "com.apple.product-type.application";
@@ -263,6 +279,9 @@
 				Base,
 			);
 			mainGroup = C7B58AD0263BC185009E8C0E;
+			packageReferences = (
+				C7F00AAC26C2CAAC00FD8EEF /* XCRemoteSwiftPackageReference "ChartView" */,
+			);
 			productRefGroup = C7B58ADA263BC185009E8C0E /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -332,6 +351,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				C7B58B2726417892009E8C0E /* NetworkService.swift in Sources */,
+				C7F00AC626C2ED5100FD8EEF /* ChartViews.swift in Sources */,
 				C7B58B2C26417B41009E8C0E /* Stats.swift in Sources */,
 				C7B58B41264747F0009E8C0E /* PricesViewModel.swift in Sources */,
 				C7B58B4A26475A29009E8C0E /* CoinView.swift in Sources */,
@@ -551,6 +571,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		C7F00AAC26C2CAAC00FD8EEF /* XCRemoteSwiftPackageReference "ChartView" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/AppPear/ChartView";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 1.5.5;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		C7F00AAD26C2CAAC00FD8EEF /* SwiftUICharts */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = C7F00AAC26C2CAAC00FD8EEF /* XCRemoteSwiftPackageReference "ChartView" */;
+			productName = SwiftUICharts;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = C7B58AD1263BC185009E8C0E /* Project object */;
 }

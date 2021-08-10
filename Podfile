@@ -9,5 +9,6 @@ target 'BitHolder' do
 
 	pod 'SnapKit', '~> 5.0.0'
 	pod 'Kingfisher', '~> 6.0'
+	pod 'Charts'
 
 end
