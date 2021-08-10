@@ -273,7 +273,7 @@ extension NSAttributedString {
             case .expandChart:
                 return createDictionary(font: UIFont.systemFont(ofSize: 12), color: UIColor(r: 255, g: 255, b: 255, a: 0.9), lineHeight: 16, alignment: .center)
         case .filterText:
-            return createDictionary(font: UIFont.systemFont(ofSize: 16), color: UIColor(r: 0, g: 0, b: 0), lineHeight: 24, alignment: .left, kern: -0.3)
+            return createDictionary(font: UIFont.systemFont(ofSize: 10, weight: .semibold), color: UIColor.gray, lineHeight: 12, alignment: .left, kern: -0.3)
         case .historyCellMoneyIncome:
             return createDictionary(font: UIFont.systemFont(ofSize: 14, weight: .semibold), color: UIColor(r: 75, g: 189, b: 92), lineHeight: 16, alignment: .right)
         case .historyCellMoneyLoss:
