@@ -198,9 +198,9 @@
 				C7B58B13263E0F3F009E8C0E /* PricesViewController.swift */,
 				C7B58B40264747F0009E8C0E /* PricesViewModel.swift */,
 				C7F0E900266C151700068F53 /* ChartsInfoViewController.swift */,
+				C7F00ACE26C42E7800FD8EEF /* ChartsInfoViewModel.swift */,
 				C7F00AC426C2ED3B00FD8EEF /* Chart */,
 				C7B58B4826475A09009E8C0E /* Cells */,
-				C7F00ACE26C42E7800FD8EEF /* ChartsInfoViewModel.swift */,
 			);
 			path = Prices;
 			sourceTree = "<group>";

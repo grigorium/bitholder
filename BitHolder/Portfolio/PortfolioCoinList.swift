@@ -35,7 +35,7 @@ class PortfolioCoinList: UIViewController, UITableViewDelegate, UITableViewDataS
             m.left.right.bottom.equalToSuperview()
         }
         tableView.backgroundColor = .white
-        tableView.allowsSelection = false
+        //tableView.allowsSelection = false
         
         view.addSubview(button)
         button.snp.makeConstraints { (m) in
@@ -62,6 +62,19 @@ class PortfolioCoinList: UIViewController, UITableViewDelegate, UITableViewDataS
         }
         cell.viewModel = SimpleCoinCellViewModel(cm)
         return cell
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        
+        guard let cd = cellModels?[indexPath.row] else {
+            return
+        }
+        
+        let vm = PortfolioCoinAdditionViewModel()//ChartsInfoViewModel(coinData: cd)
+        let vc = PortfolioCoinAdditionViewController()
+        vc.viewModel = vm
+        
+        self.navigationController?.pushViewController(vc, animated: true)
     }
     
 }
