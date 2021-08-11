@@ -55,8 +55,6 @@ class ChartsInfoViewController: UIViewController, ChartViewDelegate {
         viewModel.fetchData { [weak self] (chartDataValue) in
             guard let self = self else { return }
             
-            self.activityIndicator.stopAnimating()
-            
             var lineChartEntry = [ChartDataEntry]()
             let val = chartDataValue.prices
             var arr = [Double]()
@@ -93,6 +91,8 @@ class ChartsInfoViewController: UIViewController, ChartViewDelegate {
             self.chartView.delegate = self
             
             DispatchQueue.main.async { [self] in
+                self.activityIndicator.stopAnimating()
+                
                 self.scrollView.addSubview(self.chartView)
                 self.chartView.backgroundColor = UIColor.white
                 self.chartView.snp.makeConstraints { (m) in
@@ -378,31 +378,5 @@ class ChartsInfoViewController: UIViewController, ChartViewDelegate {
         prc.append(" $")
         
         return prc
-    }
-}
-
-class ChartsInfoViewModel {
-    
-    let coinId: String
-    let ticker: String
-    let coinData: CoinData
-    
-    init(coinData: CoinData) {
-        self.coinId = coinData.id ?? "bitcoin"
-        self.ticker = coinData.symbol?.uppercased() ?? "BTC"
-        self.coinData = coinData
-    }
-    
-    func fetchData(completion: @escaping (ChartDataVal)->()) {
-        NetworkService.shared.getChartInfo(id: self.coinId, completion: { coinData in
-            completion(coinData)
-        })
-    }
-    
-}
-
-extension Decimal {
-    var doubleValue: Double {
-        return NSDecimalNumber(decimal:self).doubleValue
     }
 }

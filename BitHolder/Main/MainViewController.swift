@@ -12,6 +12,8 @@ class MainViewController: UIViewController, MainViewModelDelegate {
     
     var viewModel: MainViewModel?
     
+    let activityIndicator = UIActivityIndicatorView(style: .whiteLarge)
+    
     let mountainsImageView: UIImageView = {
         let i = UIImageView(image: UIImage(named: "mountainMiat"))
         i.contentMode = .scaleAspectFill
@@ -53,6 +55,13 @@ class MainViewController: UIViewController, MainViewModelDelegate {
         scrollView.snp.makeConstraints { (m) in
             m.edges.equalToSuperview()
         }
+        
+        scrollView.addSubview(activityIndicator)
+        activityIndicator.snp.makeConstraints { (m) in
+            m.center.equalToSuperview()
+        }
+        activityIndicator.startAnimating()
+        activityIndicator.hidesWhenStopped = true
         
         scrollView.addSubview(balanceLabel)
         balanceLabel.snp.makeConstraints { (m) in
@@ -126,6 +135,7 @@ class MainViewController: UIViewController, MainViewModelDelegate {
     
     private func setupInfoViews(stats: BtcStatsData) {
         DispatchQueue.main.async {
+            self.activityIndicator.stopAnimating()
             
             self.scrollView.addSubview(self.marketLabel)
             self.marketLabel.snp.makeConstraints { (m) in
