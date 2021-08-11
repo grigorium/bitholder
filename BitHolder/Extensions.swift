@@ -198,6 +198,7 @@ enum AttributedStringStyle {
     case documentsLabel
     case indentificationResultTitle
     case indentificationResultSubtitle
+    case indentificationResultSubtitle2
     case investIdeaTitle
     case heightLine8
     case heightLine20
@@ -245,9 +246,9 @@ extension NSAttributedString {
             case .stockCellMoney:
                 return createDictionary(font: UIFont.systemFont(ofSize: 14, weight: .medium), color: UIColor(r: 0, g: 0, b: 0, a: 0.87), lineHeight: 16, alignment: .left)
             case .stockCellPercentPlus:
-                return createDictionary(font: UIFont.systemFont(ofSize: 12), color: UIColor(r: 39, g: 185, b: 60), lineHeight: 16, alignment: .right)
+                return createDictionary(font: UIFont.systemFont(ofSize: 16 ,weight: .semibold), color: UIColor(r: 39, g: 185, b: 60), lineHeight: 16, alignment: .right)
             case .stockCellPercentMinus:
-                return createDictionary(font: UIFont.systemFont(ofSize: 12), color: UIColor(r: 208, g: 2, b: 27), lineHeight: 16, alignment: .right)
+                return createDictionary(font: UIFont.systemFont(ofSize: 16 ,weight: .semibold), color: UIColor(r: 208, g: 2, b: 27), lineHeight: 16, alignment: .right)
         case .stockCellPercentPlusCentered:
             return createDictionary(font: UIFont.systemFont(ofSize: 12), color: UIColor(r: 39, g: 185, b: 60), lineHeight: 16, alignment: .center)
         case .stockCellPercentMinusCentered:
@@ -273,7 +274,7 @@ extension NSAttributedString {
             case .expandChart:
                 return createDictionary(font: UIFont.systemFont(ofSize: 12), color: UIColor(r: 255, g: 255, b: 255, a: 0.9), lineHeight: 16, alignment: .center)
         case .filterText:
-            return createDictionary(font: UIFont.systemFont(ofSize: 10, weight: .semibold), color: UIColor.gray, lineHeight: 12, alignment: .left, kern: -0.3)
+            return createDictionary(font: UIFont.systemFont(ofSize: 10, weight: .semibold), color: UIColor.darkGray, lineHeight: 12, alignment: .left, kern: -0.3)
         case .historyCellMoneyIncome:
             return createDictionary(font: UIFont.systemFont(ofSize: 14, weight: .semibold), color: UIColor(r: 75, g: 189, b: 92), lineHeight: 16, alignment: .right)
         case .historyCellMoneyLoss:
@@ -325,7 +326,9 @@ extension NSAttributedString {
         case .indentificationResultTitle:
             return createDictionary(font: UIFont.systemFont(ofSize: 20, weight: .bold), color: UIColor.black, lineHeight: 24, alignment: .center, kern: 0.4)
         case .indentificationResultSubtitle:
-            return createDictionary(font: UIFont.systemFont(ofSize: 14), color: UIColor(r: 153, g: 153, b: 153, a: 0.87), lineHeight: 20, alignment: .center)
+            return createDictionary(font: UIFont.systemFont(ofSize: 14, weight: .medium), color: UIColor.black.withAlphaComponent(0.7), lineHeight: 20, alignment: .center)
+        case .indentificationResultSubtitle2:
+            return createDictionary(font: UIFont.systemFont(ofSize: 14, weight: .regular), color: UIColor.black.withAlphaComponent(0.7), lineHeight: 20, alignment: .center)
         case .investIdeaTitle:
             return createDictionary(font: UIFont.systemFont(ofSize: 20, weight: .bold), color: .black, lineHeight: 20, alignment: .left)
         case .heightLine8:

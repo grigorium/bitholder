@@ -81,21 +81,20 @@ class PricesViewController: UIViewController, PricesViewModelDelegate, UITableVi
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = CoinCell()
-        guard let cm = cellModels?[indexPath.row] else {
+        guard let cd = cellModels?[indexPath.row] else {
             return cell
         }
-        cell.viewModel = CoinCellViewModel(cm)
+        cell.viewModel = CoinCellViewModel(cd)
         
         return cell
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        guard let cm = cellModels?[indexPath.row] else {
+        guard let cd = cellModels?[indexPath.row] else {
             return
         }
         
-        //coinViewcontroller
-        let vm = ChartsInfoViewModel(coinId: cm.id ?? "bitcoin")
+        let vm = ChartsInfoViewModel(coinData: cd)
         let vc = ChartsInfoViewController()
         vc.viewModel = vm
         
